@@ -42,15 +42,15 @@ namespace udp
                 var ilkoge = receiveBytes[0];
                 if (ilkoge !=0)
                 {   
-                    img = ImDecode(np.frombuffer(receiveBytes, np.uint8).ToByteArray());
+                    //img = ImDecode(np.frombuffer(receiveBytes, np.uint8).ToByteArray());
                     //Cv2.ImShow("cam",img);
-
+                    // WORK IN PROGRESS
                     Console.WriteLine("This message {0} is received from {1}", returnData, RemoteIpEndPoint.ToString());
                     // Window.ShowImages(img);
                 }
                 else
                 {
-                    pencere.ShowImage(img);
+                    //pencere.ShowImage(img);
                     receiveBytes = receivingUdpClient.Receive(ref RemoteIpEndPoint);
                     receivingUdpClient.EndReceive(ar_, ref RemoteIpEndPoint);
                     Receive(ar_,pencere, receiveBytes);
